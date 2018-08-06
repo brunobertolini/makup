@@ -1,0 +1,42 @@
+{
+  "name": "makup",
+  "version": "0.0.0",
+  "description": "High customizable react and react native ui kit",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "brunobertolini/makup",
+  "author": {
+    "name": "Bruno Bertolini",
+    "email": "dev@brunobertolini.com",
+    "url": "http://brunobertolini.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "scripts": {
+    "lint": "prettier --single-quote --no-semi --write  '{src,test,.}/**/*.js'",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "release": "standard-version -a --no-verify"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "codecov": "^3.0.4",
+    "husky": "^0.14.3",
+    "nyc": "^12.0.2",
+    "prettier": "^1.14.0",
+    "pretty-quick": "^1.6.0",
+    "standard-version": "^4.4.0"
+  }
+}
